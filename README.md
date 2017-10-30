@@ -28,7 +28,7 @@ I would like to print my transaction statement to include dates, credits and deb
 
 •••Domain Modelling
 
-Bank Account has the responsibility to 'balance', 'credit/deposit', 'debit/witdrawal', 'create', 'save', 
+Bank Account has the responsibility to 'balance', 'credit/deposit', 'debit/withdrawal', 'create', 'save',
 Bank Statement/Transaction History is an array of 'transactions'  
-Single Transaction - 'date', 'amount'
+Single Transaction - 'date', 'credit', 'debit', 'new_balance'
 Statement has a responsibility of 'print'
