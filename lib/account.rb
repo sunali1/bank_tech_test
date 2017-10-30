@@ -6,5 +6,8 @@ attr_reader :balance
     @balance = 0
   end
 
-
+  def deposit(amount)
+    @balance += 100
+  end
+  
 end
