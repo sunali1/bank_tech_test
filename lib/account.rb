@@ -7,7 +7,11 @@ attr_reader :balance
   end
 
   def deposit(amount)
-    @balance += 100
+    @balance += amount
   end
-  
+
+  def withdrawal(amount)
+    @balance -= amount
+  end
+
 end
