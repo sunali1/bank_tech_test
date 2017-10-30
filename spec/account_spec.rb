@@ -8,14 +8,19 @@ describe Account do
   end
 
   it "increases the balance by credit amount" do
-    account.deposit(100)
+    account.credit(100)
     expect(account.balance).to eq(100)
   end
 
   it "decreases the balance by deposit amount" do
-    account.deposit(100)
-    account.withdrawal(50)
+    account.credit(100)
+    account.debit(50)
     expect(account.balance).to eq(50)
+  end
+
+  it "creates a transaction in transaction history" do
+    account.credit(100)
+    expect(account.create_transaction).to eq(credit: 100, debit: 0)
   end
 
 
