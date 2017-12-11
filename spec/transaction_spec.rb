@@ -1,13 +1,13 @@
 require 'transaction'
 
 describe Transaction do
-  subject(:transaction) { described_class.new(100, 50, 50) }
+  subject(:transaction) { described_class.new }
   let(:credit) { 100 }
   let(:debit)  { 50 }
-  let(:new_balance) { 50 }
+  let(:balance) { 50 }
 
   it "records the date of credit" do
-    expect(transaction.date).to eq("30-10-2017")
+    expect(transaction.date).to eq("11-12-2017")
   end
 
   it "records the credit made" do
