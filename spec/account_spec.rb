@@ -3,7 +3,7 @@ require 'account'
 describe Account do
   subject(:account) { described_class.new }
 
-  it "initializes with a balance of 0" do
+  it "initializes with a default balance of 0" do
     expect(account.balance).to eq(0)
   end
 
@@ -18,6 +18,10 @@ describe Account do
     expect(account.balance).to eq(50)
   end
 
+  it "creates a transaction entry when credit is made" do
+    account.withdraw(50)
+    expect(account.transaction_history).to include(@debit=50, @credit=0, @balance=-50)
+  end
 
 
   # it "creates a transaction in transaction history" do

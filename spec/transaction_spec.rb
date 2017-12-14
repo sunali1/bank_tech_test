@@ -10,9 +10,15 @@ describe Transaction do
   it "should respond to initialize with default balance of 0" do
     expect(Transaction.new.balance).to eq(0)
   end
+  it "should respond to initialize with default credit of 0" do
+    expect(Transaction.new.credit).to eq(0)
+  end
+  it "should respond to initialize with default debit of 0" do
+    expect(Transaction.new.debit).to eq(0)
+  end
 
   it "records the date of transaction" do
-    expect(transaction.date).to eq("11-12-2017")
+    expect(transaction.date).to eq(Time.now.strftime("%d-%m-%Y"))
   end
 
   it "records the credit made" do
