@@ -20,7 +20,8 @@ describe Account do
 
   it "creates a transaction entry when credit is made" do
     account.withdraw(50)
-    expect(account.transaction_history).to include("@debit=50, @credit=0, @balance=-50")
+    expect(account.transaction_history.length).to eq(1)
+    "@debit=50, @credit=0, @balance=-50"
   end
 
 
