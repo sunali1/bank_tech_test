@@ -21,9 +21,13 @@ describe Account do
   it "creates a transaction entry when credit is made" do
     account.withdraw(50)
     expect(account.transaction_history.length).to eq(1)
-    "@debit=50, @credit=0, @balance=-50"
   end
 
+  it "creates a transaction and saves in transaction history upon a deposit and withdrawal" do
+    account.deposit(100)
+    account.withdraw(50)
+    expect(account.transaction_history.length).to eq(2)
+  end
 
   # it "creates a transaction in transaction history" do
   #   account.credit(100)
